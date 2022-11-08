@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-width: 60em;
+}
+
+body {
+    margin: 20px 28px;
+}
+
+header {
+    max-width: var(--main-width);
+    margin-inline: auto;
+}
+
+h1 {
+    color: #9b66c1;
+    text-transform: uppercase;
+}
+
+main {
+    margin-top: 4em;
+    max-width: var(--main-width);
+    margin-inline: auto;
+}
+
+.wip {
+    color: #aaa;
+}
+
+article {
+    margin: 30px 0;
+}
+
+article h2 {
+    font-size: 28px;
+}
+
+article p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05em;
+    text-align: justify;
+}
+
+code {
+    background-color: lightgray;
+    padding: 0 4px;
+}

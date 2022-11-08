@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/main.js" defer></script>
+  <title>My blog</title>
+</head>
+<body>
+  <header>
+    <h1>Flying squirells</h1>
+    <p class="wip">The website is a work in progress. Please visit later.</p>
+  </header>
+  <template id="blog-item-template">
+    <article>
+      <h2><slot name="title" data-nops>this is an item header</slot></h2>
+      <slot name="content">this is item's body</slot>
+    </article>
+  </template>
+  <main id="main-container">
+  </main>
+</body>
+</html>
