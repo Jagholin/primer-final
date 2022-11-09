@@ -52,19 +52,6 @@ main > :first-child {
     margin-top: 0;
 }
 
-footer {
-    width: 100%;
-    margin-inline: auto;
-    background-color: var(--second-bkg);
-    color: var(--second-text);
-}
-
-footer > p {
-    max-width: var(--main-width);
-    margin-inline: auto;
-    margin: 0.5em auto;
-}
-
 .wip {
     color: #aaa;
     font-style: italic;
@@ -139,4 +126,21 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+footer {
+    width: 100%;
+    margin-inline: auto;
+    background-color: var(--second-bkg);
+    color: var(--second-text);
+}
+
+footer > p {
+    max-width: var(--main-width);
+    margin-inline: auto;
+    margin: 0.5em auto;
+}
+
+footer .copyright {
+    float:right;
 }
