@@ -63,6 +63,22 @@ article {
     transition: height 0.75s linear;
 }
 
+article.collapsed {
+    cursor: pointer;
+}
+
+article.collapsed:hover {
+    box-shadow: inset -8px -8px 35px gray;
+}
+
+article.collapsed .blog-entry-preview {
+    color: lightgrey;
+}
+
+article.collapsed:hover .blog-entry-preview {
+    color: unset;
+}
+
 article.collapsed > .collapse {
     display: none;
 }
