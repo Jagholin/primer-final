@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>My blog</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/style.css">
+  <script src="https://kit.fontawesome.com/7e571179c3.js" crossorigin="anonymous"></script>
   <script src="scripts/main.js" defer></script>
-  <title>My blog</title>
 </head>
 <body>
   <template id="blog-item-template">
-    <article class="blog-entry bordered">
-      <h2><slot name="title" data-nops>this is an item header</slot></h2>
-      <slot name="content">this is item's body</slot>
+    <article class="blog-entry bordered collapsed">
+      <h2 id="test_id"><slot name="title" data-nops>this is an item header</slot></h2>
+      <p class="published-on"><i class="fa-regular fa-clock"></i> <slot name="publish-time" data-nops></slot></p>
+      <div><slot name="content-preview"><p>This is a preview</p></slot></div>
+      <div class="collapse"><slot name="content">this is item's body</slot></div>
     </article>
   </template>
 
   <header>
     <h1>Flying squirrels</h1>
     <p class="wip">The website is a work in progress. Please visit later.</p>
+    <nav>
+      <ul>
+        <li>
+          <a href="https://github.com/jagholin" target="_blank"><span class="fa-brands fa-github"></span>  github</a>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main id="main-container">
   </main>

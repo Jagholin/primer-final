@@ -79,16 +79,33 @@ function adjustReplacement(replacement, node) {
         } else {
             newP.appendChild(adjustedRepl);
         }
-        if (parCount !== 0) {
+        /* if (parCount !== 0) {
             newP.classList.add("hidden");
             const hideAttribute = document.createAttribute("data-hide");
             hideAttribute.value = "true";
             newP.attributes.setNamedItem(hideAttribute);
-        }
+        } */
         result.appendChild(newP);
         parCount++;
     }
     return result;
+}
+
+/**
+ * generates preview from the given string
+ * @param {string} str input string
+ * @returns {string}
+ */
+function generatePreview(str) {
+    const firstPeriod = str.indexOf(".");
+    if (firstPeriod === -1) {
+        return str;
+    }
+    const secondPeriod = str.indexOf(".", firstPeriod + 1);
+    if (secondPeriod === -1) {
+        return str;
+    }
+    return str.substring(0, secondPeriod) + "\u2026";
 }
 
 /**
@@ -103,6 +120,20 @@ function replaceSlots(node, replacements) {
     for (const slot of slots) {
         const slotName = slot.getAttribute("name");
         let replacementCandidate = replacements[slotName];
+        if (typeof replacementCandidate === "undefined") {
+            // check if this is a preview
+            const matches = slotName.match(/(.+?)-preview$/);
+            if (matches === null) {
+                console.error(`Cant find replacement for slot named ${slotName}`);
+                continue;
+            }
+            const ref = replacements[matches[1]];
+            if (typeof ref === "undefined") {
+                console.error(`Cant find replacement name ${matches[1]} referenced by slot name ${slotName}`)
+                continue;
+            }
+            replacementCandidate = generatePreview(replacements[matches[1]]);
+        }
         // if the element contains nops attribute, dont split the string
         if (!("nops" in slot.dataset)) {
             replacementCandidate = replacementCandidate.split("\n");
@@ -162,7 +193,30 @@ dataRequest.addEventListener('readystatechange', function() {
             let result = JSON.parse(dataRequest.responseText);
             // result should contain fields "author" and "posts"
             createPosts(result.posts);
+            expandablePosts();
         }
     }
 });
 dataRequest.send();
+
+
+/// The following code allows to open/collapse single blog posts.
+/** @type {HTMLElement} */
+let expandedArticle = null;
+function expandablePosts() {
+    const entries = document.querySelectorAll("article.blog-entry");
+    for (const en of entries) {
+        en.addEventListener("click", function(ev) {
+            // console.log("click ", ev, " entry ", en);
+            if (expandedArticle === en) {
+                return; // nothing changed
+            }
+            if (expandedArticle) {
+                // close this one
+                expandedArticle.classList.add("collapsed");
+            }
+            en.classList.remove("collapsed");
+            expandedArticle = en;
+        })
+    }
+}
