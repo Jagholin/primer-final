@@ -9,17 +9,21 @@
   <title>My blog</title>
 </head>
 <body>
-  <header>
-    <h1>Flying squirrels</h1>
-    <p class="wip">The website is a work in progress. Please visit later.</p>
-  </header>
   <template id="blog-item-template">
-    <article>
+    <article class="blog-entry bordered">
       <h2><slot name="title" data-nops>this is an item header</slot></h2>
       <slot name="content">this is item's body</slot>
     </article>
   </template>
+
+  <header>
+    <h1>Flying squirrels</h1>
+    <p class="wip">The website is a work in progress. Please visit later.</p>
+  </header>
   <main id="main-container">
   </main>
+  <footer>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </footer>
 </body>
 </html>

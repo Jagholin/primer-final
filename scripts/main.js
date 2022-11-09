@@ -66,6 +66,7 @@ function adjustReplacement(replacement, node) {
     }
     // lets make paragraphs out of each replArray element
     const result = document.createDocumentFragment();
+    let parCount = 0;
     for (const repl of replArray) {
         const adjustedRepl = adjustReplacement(repl, node);
         // this function can return Node, string or undefined.
@@ -78,7 +79,14 @@ function adjustReplacement(replacement, node) {
         } else {
             newP.appendChild(adjustedRepl);
         }
+        if (parCount !== 0) {
+            newP.classList.add("hidden");
+            const hideAttribute = document.createAttribute("data-hide");
+            hideAttribute.value = "true";
+            newP.attributes.setNamedItem(hideAttribute);
+        }
         result.appendChild(newP);
+        parCount++;
     }
     return result;
 }

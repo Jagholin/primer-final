@@ -4,16 +4,18 @@
 }
 
 :root {
-    --main-width: 60em;
-}
-
-body {
-    margin: 20px 28px;
+    --main-width: 60rem;
+    font-size: 16px;
 }
 
 header {
+    background-color: #ddd;
+}
+
+header > * {
     max-width: var(--main-width);
     margin-inline: auto;
+    padding-top: 20px;
 }
 
 h1 {
@@ -27,15 +29,39 @@ main {
     margin-inline: auto;
 }
 
+footer {
+    width: 100%;
+    margin-inline: auto;
+    padding-bottom: 1.2rem;
+    background-color: dodgerblue;
+}
+
+footer > p {
+    max-width: var(--main-width);
+    margin-inline: auto;
+}
+
 .wip {
     color: #aaa;
+    font-style: italic;
 }
 
 article {
     margin: 30px 0;
 }
 
+.bordered {
+    border: 1.5px solid #888;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.15);
+    padding-inline: 2.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
 article h2 {
+    margin-top: 1.25rem;
     font-size: 28px;
 }
 
@@ -45,6 +71,7 @@ article p {
     font-family: Helvetica, Arial, sans-serif;
     letter-spacing: 0.05em;
     text-align: justify;
+    margin-block: 1.2em;
 }
 
 code {
