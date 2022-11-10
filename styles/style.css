@@ -60,19 +60,15 @@ main > :first-child {
 article {
     margin: 2em 0;
     position: relative;
-    transition: height 0.75s linear;
 }
 
 article.collapsed {
     cursor: pointer;
 }
 
-article.collapsed:hover {
-    box-shadow: inset -8px -8px 35px gray;
-}
-
 article.collapsed .blog-entry-preview {
     color: lightgrey;
+    transition: color 0.25s linear;
 }
 
 article.collapsed:hover .blog-entry-preview {
