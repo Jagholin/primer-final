@@ -132,7 +132,7 @@ function replaceSlots(node, replacements) {
                 console.error(`Cant find replacement name ${matches[1]} referenced by slot name ${slotName}`)
                 continue;
             }
-            replacementCandidate = generatePreview(replacements[matches[1]]);
+            replacementCandidate = generatePreview(ref);
         }
         // if the element contains nops attribute, dont split the string
         if (!("nops" in slot.dataset)) {
