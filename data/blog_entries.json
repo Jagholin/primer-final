@@ -3,12 +3,12 @@
     "posts": [
         {
             "title": "First blog post",
-            "publish-time": "10:30 8.11.2022",
+            "publish-time": "2022-11-08T10:30:00",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque volutpat ac tincidunt vitae semper quis. Consectetur lorem donec massa sapien faucibus et molestie ac. Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa. Viverra aliquet eget sit amet.\n Vulputate odio ut enim blandit volutpat. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Id aliquet risus feugiat in ante metus dictum at. Iaculis at erat pellentesque adipiscing. Duis at tellus at urna. Tortor dignissim convallis aenean et tortor. Et tortor consequat id porta nibh. Et netus et malesuada fames ac turpis. Odio ut sem nulla pharetra. Ac tincidunt vitae semper quis lectus nulla at volutpat. Ac feugiat sed lectus vestibulum mattis. Etiam sit amet nisl purus. A diam sollicitudin tempor id eu nisl."
         }, 
         {
             "title": "Second blog post",
-            "publish-time":"12:00 7.11.2022",
+            "publish-time":"2022-11-07T11:34:00",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus sed viverra. Nulla facilisi cras fermentum odio eu feugiat. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Eu lobortis elementum nibh tellus molestie nunc non blandit.\n Leo in vitae turpis massa sed elementum. Cras ornare arcu dui vivamus arcu felis bibendum ut. Egestas pretium aenean pharetra magna ac placerat vestibulum. Velit scelerisque in dictum non consectetur a erat nam. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Tortor consequat id porta nibh venenatis. Feugiat nisl pretium fusce id velit ut tortor pretium viverra. Ornare arcu dui vivamus arcu felis bibendum ut.\n Placerat vestibulum lectus mauris ultrices eros. Mauris augue neque gravida in fermentum. A lacus vestibulum sed arcu non odio. Sed elementum tempus egestas sed sed risus pretium. Tristique risus nec feugiat in fermentum posuere urna nec tincidunt."
         }
     ]
