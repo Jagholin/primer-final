@@ -145,6 +145,7 @@ footer {
     margin-inline: auto;
     background-color: var(--second-bkg);
     color: var(--second-text);
+    margin-top: 4rem;
 }
 
 footer > p {
