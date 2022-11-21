@@ -47,7 +47,14 @@ function adjustReplacement(replacement, node) {
     }
     if (replType === "string") {
         // todo: parse this and turn tags like \code into corresponding HTML elements
-        return replacement;
+        // see if it can be parsed as a Date
+        const tryDate = Date.parse(replacement);
+        if (isNaN(tryDate)) {
+            // not a date
+            return replacement;
+        }
+        const realDate = new Date(tryDate);
+        return realDate.toLocaleString();
     }
     if (replType !== "object") {
         console.error("Cannot recognize replacement type, repl ", replacement);
@@ -132,7 +139,7 @@ function replaceSlots(node, replacements) {
                 console.error(`Cant find replacement name ${matches[1]} referenced by slot name ${slotName}`)
                 continue;
             }
-            replacementCandidate = generatePreview(replacements[matches[1]]);
+            replacementCandidate = generatePreview(ref);
         }
         // if the element contains nops attribute, dont split the string
         if (!("nops" in slot.dataset)) {
